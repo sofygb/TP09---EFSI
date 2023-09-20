@@ -3,10 +3,9 @@ import "./styles.css";
 import React from 'react';
 import Nav from "./components/Nav";
 import Home from './components/Home';
-import Listado from './components/Listado';
-import MyForm from './components/Formulario';
+import Login from './components/Login'
 import Informacion from './components/Informacion';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Router, Routes, Route, Link } from 'react-router-dom';
 import UserProvider from './context/UserContext';
 
 function App() {
