@@ -5,7 +5,7 @@ import Nav from "./components/Nav";
 import Home from './components/Home';
 import Login from './components/Login'
 import Informacion from './components/Informacion';
-import { BrowserRouter, Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import UserProvider from './context/UserContext';
 
 function App() {
@@ -15,16 +15,17 @@ function App() {
   return (
     <BrowserRouter>
     <div className="App">
-    <userProvider>
+    <UserProvider>
       <Routes> 
         <Route path='/' element={<Nav />}>
         <Route index element={<Home />}></Route>
         <Route path='/informacion' element={<Informacion />} ></Route>
+        <Route path='/login' element={<Login />} ></Route>
         
         <Route path='*' element={<h1>Not Found</h1>} ></Route>
         </Route> 
       </Routes> <br></br>
-    </userProvider>
+    </UserProvider>
     </div> 
     </BrowserRouter>
     
