@@ -7,6 +7,7 @@ import Listado from './components/Listado';
 import MyForm from './components/Formulario';
 import Informacion from './components/Informacion';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import UserProvider from './context/UserContext';
 
 function App() {
   const [comments, setComentarios] = React.useState([])
@@ -15,6 +16,7 @@ function App() {
   return (
     <BrowserRouter>
     <div className="App">
+    <userProvider>
       <Routes> 
         <Route path='/' element={<Nav />}>
         <Route index element={<Home />}></Route>
@@ -23,6 +25,7 @@ function App() {
         <Route path='*' element={<h1>Not Found</h1>} ></Route>
         </Route> 
       </Routes> <br></br>
+    </userProvider>
     </div> 
     </BrowserRouter>
     
