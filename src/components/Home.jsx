@@ -12,7 +12,11 @@ const Home = () => {
     
         <div className="container flex" style={{maxWidth: "100%", marginLeft:"3rem", textAlign:"left"}}>
             <div className="row">
-            <MyForm comments={comments} setComentarios={setComentarios}></MyForm>
+            <MyForm comments={comments} setComentarios={setComentarios}>
+            { isLoginPending && <div>Please wait...</div> }
+      { isLoggedIn && <div>Success.</div> }
+      { loginError && <div>{loginError.message}</div> }
+            </MyForm>
             </div> 
             <Listado comments={comments} setComentarios={setComentarios} />
         </div>

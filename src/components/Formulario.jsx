@@ -10,6 +10,7 @@ const MyForm = ({ comments, setComentarios }) => {
         const nuevoComentario = {
             puntoVerde: selectedPuntoVerde,
             nombreUsuario: document.getElementById("nombreUsuario").value,
+            passwordUsuario: document.getElementById("passwordUsuario").value,
             calificacion: document.getElementById("calificacion").value,
             comentario: document.getElementById("comentario").value,
             fecha: document.getElementById("fecha").value,
@@ -43,8 +44,17 @@ const MyForm = ({ comments, setComentarios }) => {
       type="text"
       name="username"
       className="u-full-width"
-      placeholder="Ingresa tu nombre de usuario"
+      placeholder="Ingresa tu nombre de usuario: Admin"
       id="nombreUsuario"
+    />
+
+<label htmlFor="passwordUsuario">Contraseña</label>
+    <input
+      type="password"
+      name="password"
+      className="u-full-width"
+      placeholder="Ingresa tu contraseña: admin"
+      id="passwordUsuario"
     />
 
     <label htmlFor="calificacion">Calificación:</label>
