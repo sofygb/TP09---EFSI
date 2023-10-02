@@ -10,7 +10,7 @@ const UserProvider = (props) => {
 export default UserProvider;*/
 
 import React from 'react';
-import useSetState from 'react-use';
+import {useSetState} from 'react-use';
 
 export const AuthContext = React.createContext(null);
 

@@ -1,8 +1,14 @@
-import React from "react";
 import Listado from './Listado';
 import MyForm from './Formulario';
+import {AuthContext} from '../context/AuthContext.js'
+import React, { useContext } from 'react';
 
 const Home = () => {
+    const {loginError}=useContext(AuthContext)
+    const {isLoggedIn}=useContext(AuthContext)
+    const {isLoginPending}=useContext(AuthContext)
+
+
     const [comments, setComentarios] = React.useState([])
     return (
     <div>

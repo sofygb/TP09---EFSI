@@ -1,6 +1,4 @@
 import React from "react";
-import ReactDOM from 'react-dom/client';
-import { useState } from 'react';
 
 const Comentario = ({puntoVerde, nombreUsuario, fecha, comentario, calificacion, hora, posicion, setComentarios, comments}) => { //Element tiene los atributos de cada cita + su key
     const eliminarComentario = () => { //La función debería pasar el setcitas con la lista de citas, sin la cita cuya key es pasada por parámetro

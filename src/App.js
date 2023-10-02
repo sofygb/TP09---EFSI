@@ -6,7 +6,7 @@ import Home from './components/Home';
 import Login from './components/Login'
 import Informacion from './components/Informacion';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { AuthContext } from './context/AuthContext.jsx';
+import { ContextProvider } from './context/AuthContext.js';
 
 function App() {
   const [comments, setComentarios] = React.useState([])
@@ -15,7 +15,7 @@ function App() {
   return (
     <BrowserRouter>
     <div className="App">
-    <AuthContext>
+    <ContextProvider>
       <Routes> 
         <Route path='/' element={<Nav />}>
         <Route index element={<Home />}></Route>
@@ -25,7 +25,7 @@ function App() {
         <Route path='*' element={<h1>Not Found</h1>} ></Route>
         </Route> 
       </Routes> <br></br>
-    </AuthContext>
+    </ContextProvider>
     </div> 
     </BrowserRouter>
     
