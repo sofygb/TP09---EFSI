@@ -69,11 +69,11 @@ const LoginForm = () => {
     });
   }
 
- var elUsuario = window.localStorage
- elUsuario.setItem("usuario", isLoggedIn)
+ //(clave, valor)
+
     
   return (
-    <form name="loginForm" onSubmit={onSubmit}>
+  <form name="loginForm" onSubmit={onSubmit} style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center', marginTop: 32}}>
 
       <div className="row">
 
@@ -112,11 +112,9 @@ const LoginForm = () => {
         
       </div>
 
-      { elUsuario ? 
-      <div>Success.</div>
-      :
-      <div>{loginError.message}</div>
-    }
+      { //setUsuario.usuario != null &&
+        isLoggedIn ? <div>Success.</div> : <div>{'not log'}</div>
+      }
     </form>
   )
 }

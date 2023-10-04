@@ -18,3 +18,4 @@ export default function Nav(){
   );
 
 }
+//<Link to="/login">{isLoggedIn ? <div>Success.</div> : <div>{'not log'}</div>}</Link>

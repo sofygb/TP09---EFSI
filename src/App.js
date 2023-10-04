@@ -34,4 +34,7 @@ function App() {
 
 export default App;
 
-/*Routes replaces the switch component */
+/*Routes replaces the switch component 
+
+
+*/

@@ -15,7 +15,7 @@ import {useSetState} from 'react-use';
 export const AuthContext = React.createContext(null);
 
 const initialState = {
-  isLoggedIn: false,
+  isLoggedIn:  window.localStorage.getItem("usuario"),
   isLoginPending: false,
   loginError: null
 }
@@ -37,6 +37,7 @@ export const ContextProvider = props => {
 
       if (!error) {
         setLoginSuccess(true);
+        window.localStorage.setItem("usuario", true)
       } else {
         setLoginError(error);
       }
@@ -47,6 +48,7 @@ export const ContextProvider = props => {
     setLoginPending(false);
     setLoginSuccess(false);
     setLoginError(null);
+    window.localStorage.setItem("usuario", false)
   }
 
   return (
