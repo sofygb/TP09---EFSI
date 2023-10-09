@@ -15,9 +15,9 @@ const Comentario = ({puntoVerde, nombreUsuario, fecha, comentario, calificacion,
     <div className="comentario" style={{ border: "2px solid black", width: 300, borderRadius: "2px", marginTop: "1rem", marginBottom: "1rem"}}>
         <div style={{margin: "1rem"}}>
             <p style={{fontSize: 20, fontWeight: 600, color: 'green'}}>Punto Verde: <span>{puntoVerde}</span></p>
-            <p><span>{nombreUsuario}</span></p>
-            <p><span>{calificacion}</span></p>
-            <p><span>{comentario}</span></p>
+            <p style={{fontSize: 12, fontWeight: 600}}>@<span>{nombreUsuario}</span>admin</p>
+            <p>Calificación: <span>{calificacion}</span>/5</p>
+            <p>Comentario: <span>{comentario}</span></p>
             <p>Fecha: <span>{fecha}</span></p>
             <p>Hora: <span>{hora}</span></p>
             <button className="button.elimnar u-full-width" style={{}} onClick={eliminarComentario}>Eliminar
