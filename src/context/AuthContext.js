@@ -15,7 +15,7 @@ import {useSetState} from 'react-use';
 export const AuthContext = React.createContext(null);
 
 const initialState = {
-  isLoggedIn:  window.localStorage.getItem("usuario"),
+  isLoggedIn:  false,
   isLoginPending: false,
   loginError: null
 }

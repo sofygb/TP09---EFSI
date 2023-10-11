@@ -14,39 +14,15 @@ const MyForm = ({ comments, setComentarios }) => {
   const navigate = useNavigate();
   const [historialComentarios, setHistorialComentario] = useState("");
 
-  var comentariosViejos = []
-  comentariosViejos = localStorage.getItem("usuario") || []
 
-  /* 
-  {
-    comentarios: [
-      {
 
-      }
-    ]
-    isLoggedin: bool
-  }
-  */
 
-  useEffect(() => {
-    const nuevoComentario = {
-      puntoVerde: selectedPuntoVerde,
-      usuario: document.getElementById("nombreUsuario").value,
-      calificacion: document.getElementById("calificacion").value,
-      comentario: document.getElementById("comentario").value,
-      fecha: document.getElementById("fecha").value,
-      hora: document.getElementById("hora").value,
-    };
-
-    localStorage.setItem("usuario", [...comentariosViejos, nuevoComentario])
-  }, [historialComentarios])
 
 
   const irALogin = () => {
     navigate('/login');
   }
   const updateComentario = () => {
-
     const nuevoComentario = {
       puntoVerde: selectedPuntoVerde,
       usuario: document.getElementById("nombreUsuario").value,
@@ -56,7 +32,7 @@ const MyForm = ({ comments, setComentarios }) => {
       hora: document.getElementById("hora").value,
     };
 
-    setHistorialComentario([...comments, nuevoComentario]);
+    localStorage.setItem("comentarios", JSON.stringify([...(JSON.parse(localStorage.getItem("comentarios")) || []), JSON.stringify(nuevoComentario)]))
   };
 
   console.log(loggedinData)

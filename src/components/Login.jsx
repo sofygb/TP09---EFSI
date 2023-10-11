@@ -113,7 +113,7 @@ const LoginForm = () => {
       </div>
 
       { //setUsuario.usuario != null &&
-        isLoggedIn ? <div>Success.</div> : <div>{'not log'}</div>
+        isLoggedIn ? <div>Estás logged in</div> : <div>{'No estás logged in'}</div>
       }
     </form>
   )
